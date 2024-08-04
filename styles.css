@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.col-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  background-size: cover;
+  padding: 0 20px; 
+}
+
+.container-2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 300px;
+ 
+  overflow-y: auto;
+  max-height: 80vh;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.txt {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: black;
+  background-image:  linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(219, 171, 245);
+}
+
+.taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.taskList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskList li:last-child {
+  border-bottom: none;
+}
+
+.taskList li span {
+  text-decoration: none;
+}
+
+.taskList li input:checked + span {
+  text-decoration: line-through;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  .col-container {
+    justify-content: right; /* Centered horizontally */
+    align-items: center; /* Centered vertically */
+    padding: 0 10px; /* Adjust padding for mobile to maintain space */
+    background-size: contain;
+    background-position: center;
+    
+  
+  }
+
+  .container-2 {
+    width: calc(100% - 20px); /* Full width with padding */
+    margin: 20px 0; /* Margin on top and bottom */
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  button {
+    width: calc(100% - 20px); /* Full width with padding */
+    margin: 5px 0;
+  }
+
+  .txt {
+    width: calc(100% - 20px); /* Full width with padding */
+  }
+
+  .taskList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .taskList li button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
