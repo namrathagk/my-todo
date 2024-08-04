@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
 }
@@ -20,8 +21,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
-  height: 300px;
- 
+  height: auto; 
   overflow-y: auto;
   max-height: 80vh;
   overflow-x: hidden;
@@ -41,7 +41,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   color: black;
-  background-color: white;
+  background-color:#a267b2;
+}
+.txt::placeholder{
+  color:black;
 }
 
 button {
@@ -49,7 +52,7 @@ button {
   padding: 10px 20px;
   font-size: 14px;
   color: black;
-  background-image:  linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+  background-color:#a267b2;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -62,13 +65,16 @@ button:hover {
 .taskList {
   list-style-type: none;
   padding: 0;
+  font-size: 20px;
+  color:#0b0b0b;
+  background-color: white;
 }
 
 .taskList li {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
 }
 
@@ -78,9 +84,51 @@ button:hover {
 
 .taskList li span {
   text-decoration: none;
+  flex-grow: 1; 
 }
 
-.taskList li input:checked + span {
-  text-decoration: line-through;
+.taskList li input[type="checkbox"] {
+  margin-right: 40px; 
 }
 
+.taskList li button.remove {
+  margin-left: 5px; 
+}
+
+
+@media (max-width: 600px) {
+  .container-2 {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .txt {
+    width: calc(50% - 24px);
+  }
+
+  button {
+    width: calc(50% - 24px);
+    margin: 5px 0;
+  }
+
+  .taskList li {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; 
+  }
+
+  .taskList li span {
+    flex: 1; 
+  }
+
+  .taskList li input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  .taskList li button.remove {
+    margin-left: 5px;
+    width: auto; 
+    max-width: 120px; 
+    padding: 8px; 
+  }
+}
